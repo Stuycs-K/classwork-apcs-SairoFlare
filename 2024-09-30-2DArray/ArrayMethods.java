@@ -17,11 +17,11 @@ public class ArrayMethods{
     System.out.println("Expected 0. Result: " + arr2DSum(new int [][]{{0}, {}, {0}, {}, {0}}));
 
     //swapRC test cases
-    System.out.println("Expected {{1, 2}, {3, 4}}. Result: " + swapRC(new int [][]{{1, 3}, {2, 4}}));
-    System.out.println("Expected {{1, 3}, {2, 4}}. Result: " + swapRC(new int [][]{{1, 2}, {3, 4}}));
-    System.out.println("Expected {{0, 0, 0, 0, 0}, {1, 1, 1, 1, 1}}. Result: " + swapRC(new int [][]{{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}}));
-    System.out.println("Expected {{1, 2}}. Result: " + swapRC(new int [][]{{1}, {2}}));
-    System.out.println("Expected {{1}, {2}, {3}, {4}}. Result: " + swapRC(new int [][]{{1, 2, 3, 4}}));
+    System.out.println("Expected [[1, 2], [3, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 3}, {2, 4}})));
+    System.out.println("Expected [[1, 3], [2, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2}, {3, 4}})));
+    System.out.println("Expected [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1]]. Result: " + arrToString(swapRC(new int [][]{{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}})));
+    System.out.println("Expected [[1, 2]]. Result: " + arrToString(swapRC(new int [][]{{1}, {2}})));
+    System.out.println("Expected [[1], [2], [3], [4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2, 3, 4}})));
   }
 
   public static String arrToString(int[] nums) {
@@ -57,6 +57,12 @@ public class ArrayMethods{
   }
 
   public static int[][] swapRC(int[][]nums){
-  return new int[1][1];
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums[0].length; i++) {
+      for (int index = 0; index < nums.length; index++) {
+        result[i][index] = nums[index][i];
+      }
+    }
+    return result;
   }
 }
