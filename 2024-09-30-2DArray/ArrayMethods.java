@@ -47,8 +47,13 @@ public class ArrayMethods{
   }
 
   public static int arr2DSum(int[][]nums){
-    //use a nested loop to solve this
-    return 0;//place holder return value so it compiles.
+    int result = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int index = 0; index < nums[i].length; index++) {
+        result += nums[i][index];
+      }
+    }
+    return result;
   }
 
   public static int[][] swapRC(int[][]nums){
