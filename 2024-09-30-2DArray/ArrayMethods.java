@@ -19,7 +19,7 @@ public class ArrayMethods{
     System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,15},{20,-5}}));
     System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{15},{5},{20}}));
 
-    //replaceNegative
+    //replaceNegative test cases
     System.out.print("Expected [[1, 0, 10], [0, 1, 11], [0, 12, 1]]. Returned: ");
     replaceNegative(new int[][] {{-2, -2, 10}, {-3, -3, 11}, {-4, 12, -4}});
     System.out.print("Expected [[11, 0, 0], [0, 11, 0]]. Returned: ");
@@ -32,6 +32,14 @@ public class ArrayMethods{
     replaceNegative(new int[][] {{2}, {-5, -10, 11, 15 ,20, 25, -30, -40, -50}});
     System.out.print("Expected [[1], []]. Returned: ");
     replaceNegative(new int[][] {{-4}, {}});
+
+    //replaceNegative test cases
+    System.out.println("Expected [[1, 2], [3]]. Returned:" + arrToString(copy(new int[][]{{1,2}, {3}})));
+    System.out.println("Expected [[1, 2, 3], [], [], [], [1, 2, 3]]. Returned:" + arrToString(copy(new int[][]{{1,2, 3}, {}, {}, {}, {1, 2, 3}})));
+    System.out.println("Expected [[-3, -2, -1, 0], [0], [1, 2, 3]]. Returned:" + arrToString(copy(new int[][]{{-3 , -2, -1 ,0}, {0}, {1, 2, 3}})));
+    System.out.println("Expected [[5134124]]. Returned:" + arrToString(copy(new int[][]{{5134124}})));
+    System.out.println("Expected [[], [432, 234, 342], []]. Returned:" + arrToString(copy(new int[][]{{}, {432, 234, 342}, {}})));
+    System.out.println("Expected [[]]. Returned:" + arrToString(copy(new int[][]{{}})));
   }
 
   public static String arrToString(int[] nums) {
@@ -80,5 +88,20 @@ public class ArrayMethods{
       }
     }
     System.out.println(arrToString(vals));
+  }
+
+  public static int[] copy(int[] nums){
+    int[] result = new int[nums.length];
+    for (int i = 0; i <nums.length; i++) {
+      result[i] = nums[i];
+    }
+    return result;
+  }
+  public static int[][] copy(int[][] nums){
+    int[][] result = new int[nums.length][];
+    for (int i = 0; i < nums.length; i++) {
+      result[i] = copy(nums[i]);
+    }
+    return result;
   }
  }
