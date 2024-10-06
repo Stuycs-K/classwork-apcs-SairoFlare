@@ -21,7 +21,17 @@ public class ArrayMethods{
 
     //replaceNegative
     System.out.print("Expected [[1, 0, 10], [0, 1, 11], [0, 12, 1]]. Returned: ");
-    replaceNegative(new int[][] {{-2,-2,10}, {-3,-3,11}, {-4,12,-4}});
+    replaceNegative(new int[][] {{-2, -2, 10}, {-3, -3, 11}, {-4, 12, -4}});
+    System.out.print("Expected [[11, 0, 0], [0, 11, 0]]. Returned: ");
+    replaceNegative(new int[][] {{11, -20, -10}, {-10, 11, -11}});
+    System.out.print("Expected [[1, 0], [0, 1, 0], [0, 0, 1], [0, 0, 0, 1]]. Returned: ");
+    replaceNegative(new int[][] {{-2, -2}, {-2, -2, -2}, {-2, -2, -2}, {-2, -2, -2, -2}});
+    System.out.print("Expected [[1], [2], [3], [4], [5]]. Returned: ");
+    replaceNegative(new int[][] {{1}, {2}, {3}, {4}, {5}});
+    System.out.print("Expected [[2], [0, 1, 11, 15, 20, 25, 0, 0, 0]]. Returned: ");
+    replaceNegative(new int[][] {{2}, {-5, -10, 11, 15 ,20, 25, -30, -40, -50}});
+    System.out.print("Expected [[1], []]. Returned: ");
+    replaceNegative(new int[][] {{-4}, {}});
   }
 
   public static String arrToString(int[] nums) {
