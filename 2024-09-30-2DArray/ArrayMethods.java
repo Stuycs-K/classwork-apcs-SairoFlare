@@ -3,25 +3,25 @@ public class ArrayMethods{
      Selina Lin selinal50@nycstudents.net */
   public static void main(String args[]) {
     //arrToString test cases
-    System.out.println("Expected [[1, 2], [3]]. Result: " + arrToString(new int [][]{{1, 2}, {3}}));
-    System.out.println("Expected [[4], [5, 6]]. Result: " + arrToString(new int [][]{{4}, {5, 6}}));
-    System.out.println("Expected [[-2, -3, 4], [5]]. Result: " + arrToString(new int [][]{{-2, -3, 4}, {5}}));
-    System.out.println("Expected [[-1], [5], [-3], [4], [7]]. Result: " + arrToString(new int[][] {{-1}, {5}, {-3}, {4}, {7}}));
-    System.out.println("Expected [[10, 15, 8, -3, 0], []]. Result: " + arrToString(new int [][]{{10, 15, 8, -3, 0}, {}}));
+    System.out.println("Expected [[1, 2], [3]]. Returned:" + arrToString(new int[][]{{1,2}, {3}}));
+    System.out.println("Expected [[4], [5, 6]]. Returned: " + arrToString(new int[][]{{4}, {5,6}}));
+    System.out.println("Expected [[-2, -3, 4], [5]]. Returned: " + arrToString(new int[][]{{-2,-3,4}, {5}}));
+    System.out.println("Expected [[-2, -3], [4, 5]]. Returned: " + arrToString(new int[][]{{-2,-3}, {4,5}}));
+    System.out.println("Expected [[-1], [5], [-3], [4], [7]]. Returned: " + arrToString(new int[][]{{-1}, {5}, {-3}, {4}, {7}}));
+    System.out.println("Expected [[10, 15, 8, -3, 0], []]. Returned: " + arrToString(new int[][]{{10, 15, 8, -3, 0}, {}}));
 
     //arr2DSum test cases
-    System.out.println("Expected 40. Result: " + arr2DSum(new int [][]{{10, 5}, {20, 5}}));
-    System.out.println("Expected -15. Result: " + arr2DSum(new int [][]{{-5, -5}, {-5}}));
-    System.out.println("Expected 40. Result: " + arr2DSum(new int [][]{{10, 5}, {20, 5}}));
-    System.out.println("Expected 100. Result: " + arr2DSum(new int [][]{{10}, {20}, {30}, {40}, {0}}));
-    System.out.println("Expected 0. Result: " + arr2DSum(new int [][]{{0}, {}, {0}, {}, {0}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,5},{20,5}}));
+    System.out.println("Expected -15. Returned: " + arr2DSum(new int[][]{{-5,-5},{-5}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,5},{20,5}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,5},{20,5}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{40,0},{}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,15},{20,-5}}));
+    System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{15},{5},{20}}));
 
-    //swapRC test cases
-    System.out.println("Expected [[1, 2], [3, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 3}, {2, 4}})));
-    System.out.println("Expected [[1, 3], [2, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2}, {3, 4}})));
-    System.out.println("Expected [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1]]. Result: " + arrToString(swapRC(new int [][]{{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}})));
-    System.out.println("Expected [[1, 2]]. Result: " + arrToString(swapRC(new int [][]{{1}, {2}})));
-    System.out.println("Expected [[1], [2], [3], [4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2, 3, 4}})));
+    //replaceNegative
+    System.out.print("Expected [[1, 0, 10], [0, 1, 11], [0, 12, 1]]. Returned: ");
+    replaceNegative(new int[][] {{-2,-2,10}, {-3,-3,11}, {-4,12,-4}});
   }
 
   public static String arrToString(int[] nums) {
@@ -35,34 +35,40 @@ public class ArrayMethods{
     return result + "]";
   }
 
-  public static String arrToString(int[][]ary){
-    String result = "[";
-    for(int i = 0; i <ary.length; i++) {
-      result = result + arrToString(ary[i]);
-      if (i != ary.length - 1) {
-        result = result + ", ";
-      }
-    }
-    return result + "]";
+  public static String arrToString(int[][] ary){
+  //this should use arrToString(int[])
+	String result = "[";
+	for (int i = 0; i < ary.length;i++) {
+		result += arrToString(ary[i]);
+		if (i != ary.length - 1) {
+			result += ", ";
+		}
+	}
+	return result + "]";
   }
 
   public static int arr2DSum(int[][]nums){
-    int result = 0;
-    for (int i = 0; i < nums.length; i++) {
-      for (int index = 0; index < nums[i].length; index++) {
-        result += nums[i][index];
-      }
-    }
-    return result;
+	int sum = 0;
+	for (int i = 0; i < nums.length; i++) {
+		for (int j = 0; j < nums[i].length; j++) {
+			sum += nums[i][j];
+		}
+	}
+	return sum;
   }
 
-  public static int[][] swapRC(int[][]nums){
-    int[][] result = new int[nums[0].length][nums.length];
-    for (int i = 0; i < nums[0].length; i++) {
-      for (int index = 0; index < nums.length; index++) {
-        result[i][index] = nums[index][i];
+  public static void replaceNegative(int[][] vals) {
+    for(int i = 0; i < vals.length; i++){
+      for(int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0) {
+          if (i == j) {
+            vals[i][j] = 1;
+          } else {
+            vals[i][j] = 0;
+          }
+        }
       }
     }
-    return result;
+    System.out.println(arrToString(vals));
   }
-}
+ }
