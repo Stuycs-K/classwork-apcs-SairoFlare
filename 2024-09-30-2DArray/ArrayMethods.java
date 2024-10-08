@@ -19,6 +19,13 @@ public class ArrayMethods{
     System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{10,15},{20,-5}}));
     System.out.println("Expected 40. Returned: " + arr2DSum(new int[][]{{15},{5},{20}}));
 
+    //swapRC test cases
+    System.out.println("Expected [[1, 2], [3, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 3}, {2, 4}})));
+    System.out.println("Expected [[1, 3], [2, 4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2}, {3, 4}})));
+    System.out.println("Expected [[0, 0, 0, 0, 0], [1, 1, 1, 1, 1]]. Result: " + arrToString(swapRC(new int [][]{{0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1}})));
+    System.out.println("Expected [[1, 2]]. Result: " + arrToString(swapRC(new int [][]{{1}, {2}})));
+    System.out.println("Expected [[1], [2], [3], [4]]. Result: " + arrToString(swapRC(new int [][]{{1, 2, 3, 4}})));
+
     //replaceNegative test cases
     System.out.print("Expected [[1, 0, 10], [0, 1, 11], [0, 12, 1]]. Returned: ");
     replaceNegative(new int[][] {{-2, -2, 10}, {-3, -3, 11}, {-4, 12, -4}});
@@ -73,6 +80,16 @@ public class ArrayMethods{
 		}
 	}
 	return sum;
+  }
+
+  public static int[][] swapRC(int[][]nums){
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums[0].length; i++) {
+      for (int index = 0; index < nums.length; index++) {
+        result[i][index] = nums[index][i];
+      }
+    }
+    return result;
   }
 
   public static void replaceNegative(int[][] vals) {
