@@ -11,6 +11,15 @@ public class ArrayDemo{
     System.out.println(Arrays.toString(new int []{-10, -20, -30}).equals(arrToString(new int []{-10, -20, -30})));
     System.out.println(Arrays.toString(new int []{98273, 3159, -235807}).equals(arrToString(new int []{98273, 3159, -235807})));
     System.out.println(Arrays.toString(new int []{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}).equals(arrToString(new int []{0, 0, 0, 0, 0, 0, 0, 0, 0, 0})));
+
+    //countZeros2D test cases
+    System.out.println(3 == countZeros2D(new int [][]{{1, 2, 3, 4, 0}, {1, 2, 3, 4, 0}, {1, 2, 3, 4, 0}}));
+    System.out.println(6 == countZeros2D(new int [][]{{0}, {0}, {0}, {0}, {0}, {0}}));
+    System.out.println(0 == countZeros2D(new int [][]{{}}));
+    System.out.println(0 == countZeros2D(new int [][]{{1}, {2}, {3}}));
+    System.out.println(5 == countZeros2D(new int [][]{{0, 0, 0, 0, 0}, {2, 4, 6}, {3, 5}}));
+    System.out.println(2 == countZeros2D(new int [][]{{0}, {2, 4, 6, 0}, {3, 5, 7, 9, 10}}));
+    System.out.println(0 == countZeros2D(new int [][]{{10, 20, 40, -70}}));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -41,7 +50,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int result = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        if (nums[i][j] == 0) {
+          result++;
+        }
+      }
+    }
+    return result;
   }
 
   //2. Calculate the sum of a 2d array
