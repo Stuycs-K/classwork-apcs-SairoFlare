@@ -20,6 +20,14 @@ public class ArrayDemo{
     System.out.println(5 == countZeros2D(new int [][]{{0, 0, 0, 0, 0}, {2, 4, 6}, {3, 5}}));
     System.out.println(2 == countZeros2D(new int [][]{{0}, {2, 4, 6, 0}, {3, 5, 7, 9, 10}}));
     System.out.println(0 == countZeros2D(new int [][]{{10, 20, 40, -70}}));
+
+    //htmlTable test cases
+    System.out.println((htmlTable(new int [][]{{1,2,3}})).equals("<table><tr><td>1</td><td>2</td><td>3</td></tr></table>"));
+    System.out.println((htmlTable(new int [][]{{1},{2},{3}}).equals("<table><tr><td>1</td></tr><tr><td>2</td></tr><tr><td>3</td></tr></table>")));
+    System.out.println((htmlTable(new int [][]{{},{0},{1,2,3}}).equals("<table><tr></tr><tr><td>0</td></tr><tr><td>1</td><td>2</td><td>3</td></tr></table>")));
+    System.out.println((htmlTable(new int [][]{{0,-2,15},{-31,2453},{-2345},{0}})).equals("<table><tr><td>0</td><td>-2</td><td>15</td></tr><tr><td>-31</td><td>2453</td></tr><tr><td>-2345</td></tr><tr><td>0</td></tr></table>"));
+    System.out.println((htmlTable(new int [][]{{0}})).equals("<table><tr><td>0</td></tr></table>"));
+    System.out.println((htmlTable(new int [][]{{}})).equals("<table><tr></tr></table>"));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -134,6 +142,14 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      result = result + "<tr>";
+      for (int j = 0; j < nums[i].length; j++) {
+        result = result + "<td>" + nums[i][j] + "</td>";
+      }
+      result = result + "</tr>";
+    }
+    return result + "</table>";
   }
 }
