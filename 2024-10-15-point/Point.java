@@ -1,11 +1,9 @@
-
-
 public class Point{
 
   private double x,y;
 
   public String toString(){
-    return "(" + x + ","  + y + ")";
+    return "(" + x + ", " + y + ")";
   }
 
   //Initialize this Point to have the same values as the other Point.
@@ -40,6 +38,5 @@ public class Point{
   public static double distance(Point a, Point b){
     return Math.sqrt((a.getX() - b.getX()) * (a.getX() - b.getX())  + (a.getY() - b.getY()) * (a.getY() - b.getY()) );
   }
-
 
 }
