@@ -11,29 +11,27 @@ public class TriangleTester
   public static int countTrianglesA(String filename)
   {
     try{
-      Scanner file = new Scanner(filename);
+      File name = new File(filename);
+      Scanner file = new Scanner(name);
       int count = 0;
-      while(hasNextLine())
+      while(file.hasNextLine())
       {
 
-        int v0 = Interger.parseInt(file.next());
-        int v1 = Interger.parseInt(file.next());
-        int v2 = Interger.parseInt(file.next());
+        int v0 = Integer.parseInt(file.next());
+        int v1 = Integer.parseInt(file.next());
+        int v2 = Integer.parseInt(file.next());
         if (v0 + v1 > v2 && v0 + v2 > v1 && v1 + v2 > v0)
         {
           count++;
         }
         file.nextLine();
       }
+      return count;
     }
-    catch (Exception e)
+    catch (FileNotFoundException e)
     {
       System.out.println("lol");
-    }
-
-
-
+      return 0;
     }
   }
-
 }
