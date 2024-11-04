@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class TriangleTester
 {
-  public static void main (String[] arg)
-  {
-
+  public static boolean checkTriangleA(int v0, int v1, int v2) {
+    return (v0 + v1 > v2 && v0 + v2 > v1 && v1 + v2 > v0);
   }
   public static int countTrianglesA(String filename)
   {
@@ -16,11 +15,10 @@ public class TriangleTester
       int count = 0;
       while(file.hasNextLine())
       {
-
         int v0 = Integer.parseInt(file.next());
         int v1 = Integer.parseInt(file.next());
         int v2 = Integer.parseInt(file.next());
-        if (v0 + v1 > v2 && v0 + v2 > v1 && v1 + v2 > v0)
+        if (checkTriangleA(v0, v1, v2))
         {
           count++;
         }
