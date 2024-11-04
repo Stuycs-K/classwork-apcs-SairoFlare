@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class TriangleTester
 {
-  public static boolean checkTriangleA(int v0, int v1, int v2) {
-    return (v0 + v1 > v2 && v0 + v2 > v1 && v1 + v2 > v0);
-  }
   public static int countTrianglesA(String filename)
   {
     try{
@@ -18,7 +15,7 @@ public class TriangleTester
         int v0 = Integer.parseInt(file.next());
         int v1 = Integer.parseInt(file.next());
         int v2 = Integer.parseInt(file.next());
-        if (checkTriangleA(v0, v1, v2))
+        if (isValid(v0, v1, v2))
         {
           count++;
         }
@@ -28,8 +25,8 @@ public class TriangleTester
     }
     catch (FileNotFoundException e)
     {
-      System.out.println("lol");
-      return 0;
+      System.out.println("file not found");
+      return -1;
     }
   }
   public static int countTrianglesB(String filename)
