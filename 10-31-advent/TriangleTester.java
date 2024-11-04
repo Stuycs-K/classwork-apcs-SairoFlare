@@ -55,8 +55,8 @@ public class TriangleTester
       }
       catch (FileNotFoundException e)
       {
-        System.out.println("lol");
-        return 0;
+        System.out.println("file not found");
+        return -1;
       }
 
     }
