@@ -1,8 +1,9 @@
 public class Driver {
   public static void main(String[] args) {
     Animal cat = new Animal("meow", 2, "Mittens");
-    System.out.println(cat.getAge());
-    System.out.println(cat.getName());
-    System.out.println(cat.getNoise());
+    cat.speak();
+
+    Bird b1 = new Bird("chirp", 4, "Ari", 3, "blue");
+    b1.speak();
   }
 }
