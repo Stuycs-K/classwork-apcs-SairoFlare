@@ -22,10 +22,16 @@ public class ArrayListPractice {
       }
     }
   }
-  /*
+
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
   //return a new ArrayList that is in the reversed order of the original.
+  ArrayList<String> temp = new ArrayList<String>(original.size());
+    for (int i = 1; i < original.size() + 1; i++) {
+      temp.add(original.get(original.size() - i));
+    }
+    return temp;
   }
+  /*
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
