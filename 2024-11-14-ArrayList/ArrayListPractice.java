@@ -16,7 +16,7 @@ public class ArrayListPractice {
 
   public static void replaceEmpty( ArrayList<String> original){
     //Modify the ArrayList such that it has all of the empty strings are
-      for(int i = 0; i < original.size(); i ++){
+    for(int i = 0; i < original.size(); i ++){
       if(original.get(i) == ""){
         original.set(i,"Empty");
       }
@@ -31,11 +31,25 @@ public class ArrayListPractice {
     }
     return temp;
   }
-  /*
+
   public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
+    int skip = 0;
+    if (a.size() > b.size()) {
+      for (int i = 0; i < b.size(); i++) {
+        a.add(i + 1 + skip, b.get(i));
+        skip += 1;
+      }
+      return a;
+    }
+    else {
+      for (int i = 0; i < a.size(); i++) {
+        b.add(i + skip, a.get(i));
+        skip += 1;
+      }
+      return b;
+    }
   }
-  */
 }
