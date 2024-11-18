@@ -14,6 +14,7 @@ public class Blocks {
       while (file.hasNext()) {
         String movement = file.next();
         direction += turn(movement);
+        //make sure to make direction positive and then take the remainder of it and 4
       }
       return direction;
       //return distance;
