@@ -10,14 +10,15 @@ public class Blocks {
       int horizontal = 0;
       int vertical = 0;
       int direction = 0;
-      int distance = 0;
       while (file.hasNext()) {
         String movement = file.next();
         direction += turn(movement);
-        //make sure to make direction positive and then take the remainder of it and 4
+        direction = Math.abs(direction) % 4;
+        if (direction == 0) {
+          vertical += magnitude(movement);
+        }
       }
-      return direction;
-      //return distance;
+      return Math.abs(horizontal) + Math.abs(vertical);
     }
     catch (FileNotFoundException e){
       System.out.println("file not found");
@@ -32,6 +33,15 @@ public class Blocks {
     }
     else {
       return 1;
+    }
+  }
+
+  public static int magnitude(String movement) {
+    if (movement.length() == 2) {
+      return Integer.parseInt(movement.substring(1, 2));
+    }
+    else {
+      return Integer.parseInt(movement.substring(1, movement.length() - 1));
     }
   }
 }
