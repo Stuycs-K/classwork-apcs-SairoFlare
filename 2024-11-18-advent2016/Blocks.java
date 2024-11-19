@@ -13,9 +13,22 @@ public class Blocks {
       while (file.hasNext()) {
         String movement = file.next();
         direction += turn(movement);
-        direction = Math.abs(direction) % 4;
+        direction = (direction + 4) % 4;
         if (direction == 0) {
           vertical += magnitude(movement);
+          //System.out.println(vertical + "vert");
+        }
+        else if (direction == 1) {
+          horizontal += magnitude(movement);
+          //System.out.println(horizontal + "hori");
+        }
+        else if (direction == 2) {
+          vertical -= magnitude(movement);
+          //System.out.println(vertical + "vert");
+        }
+        else {
+          horizontal -= magnitude(movement);
+          //System.out.println(horizontal + "hori");
         }
       }
       return Math.abs(horizontal) + Math.abs(vertical);
