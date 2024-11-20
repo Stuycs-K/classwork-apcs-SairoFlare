@@ -47,6 +47,6 @@ public class Day2 {
 
   public static int keyPress(int x, int y) {
     int[][] numpad = new int[][]{{1,2,3}, {4,5,6}, {7,8,9}};
-    return numpad[x][y];
+    return numpad[y][x];
   }
 }
