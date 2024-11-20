@@ -9,9 +9,9 @@ public class Day2 {
       File name = new File(filename);
       Scanner file = new Scanner(name);
       ArrayList<Integer> result = new ArrayList<Integer>(3);
-      int x = 1;
-      int y = 1;
       while (file.hasNextLine()) {
+        int x = 1;
+        int y = 1;
         String num = file.nextLine();
         //System.out.println(num);
         for (int i = 0; i < num.length(); i++) {
