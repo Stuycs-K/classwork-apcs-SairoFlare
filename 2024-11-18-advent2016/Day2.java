@@ -18,7 +18,19 @@ public class Day2 {
           String temp = num.substring(i, i + 1);
           if (temp.equals("U") && y <= 0) {
             y += 1;
-            //System.out.println(y);
+            System.out.println(y + "y");
+          }
+          else if (temp.equals("D") && y >= 0) {
+            y -= 1;
+            System.out.println(y + "y");
+          }
+          else if (temp.equals("R") && x <= 0) {
+            x += 1;
+            System.out.println(x + "x");
+          }
+          else if (temp.equals("L") && x >= 0) {
+            x -= 1;
+            System.out.println(x + "x");
           }
         }
       }
