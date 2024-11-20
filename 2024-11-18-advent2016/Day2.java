@@ -13,7 +13,14 @@ public class Day2 {
       int y = 0;
       while (file.hasNextLine()) {
         String num = file.nextLine();
-        System.out.println(num);
+        //System.out.println(num);
+        for (int i = 0; i < num.length(); i++) {
+          String temp = num.substring(i, i + 1);
+          if (temp.equals("U") && y <= 0) {
+            y += 1;
+            //System.out.println(y);
+          }
+        }
       }
       return result;
     }
