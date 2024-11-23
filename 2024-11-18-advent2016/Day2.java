@@ -18,23 +18,23 @@ public class Day2 {
           String temp = num.substring(i, i + 1);
           if (temp.equals("U") && y != 0 && !(y == 1 && (x == 1 || x == 3)) && !(y == 2 && (x == 0 || x == 4))) {
             y -= 1;
-            System.out.println("U");
-            System.out.println(x + "x, " + y + "y");
+            //System.out.println("U");
+            //System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("D") && y != 4 && !(y == 3 && (x == 1 || x == 3)) && !(y == 2 && (x == 0 || x == 4))) {
             y += 1;
-            System.out.println("D");
-            System.out.println(x + "x, " + y + "y");
+            //System.out.println("D");
+            //System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("R") && x != 4 && !(x == 3 && (y == 1 || y == 3)) && !(x == 2 && (y == 0 || y == 4))) {
             x += 1;
-            System.out.println("R");
-            System.out.println(x + "x, " + y + "y");
+            //System.out.println("R");
+            //System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("L") && x != 0 && !(x == 1 && (y == 1 || y == 3)) && !(x == 2 && (y == 0 || y == 4))) {
             x -= 1;
-            System.out.println("L");
-            System.out.println(x + "x, " + y + "y");
+            //System.out.println("L");
+            //System.out.println(x + "x, " + y + "y");
           }
         }
         //System.out.println(x + "x");

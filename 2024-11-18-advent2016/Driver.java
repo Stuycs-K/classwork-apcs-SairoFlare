@@ -7,7 +7,7 @@ public class Driver {
     //System.out.println(hi.getCount());
     //System.out.println(Day6.count("a", "aaabababaaa"));
     //System.out.println(Day6.count("a", "werwetw"));
-    System.out.println(Day6.solver("input.txt"));
+    System.out.println(Day2.keypadReader("input.txt"));
 
   }
 }
