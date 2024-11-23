@@ -10,6 +10,8 @@ public class Day4 {
       Scanner file = new Scanner(name);
       int result = 0;
       while (file.hasNextLine()) {
+        ArrayList<Day4Count> letters = new ArrayList<Day4Count>();
+        boolean letterFound = false;
         String room = file.nextLine();
         //System.out.println(room);
         String[] splitRoom = room.split("-");
@@ -17,6 +19,16 @@ public class Day4 {
         //System.out.println(splitRoom[1]);
         //System.out.println(splitRoom[2]);
         //System.out.println(splitRoom[3]);
+        for (int i = 0; i < splitRoom.length - 1; i++) {
+          for (int index = 0; index < splitRoom[i].length(); i++) {
+            String read = splitRoom[i].substring(i, i + 1);
+            for (int ind = 0; ind < letters.size(); ind++) {
+              if (read.equals((letters[ind]).getLetter())) {
+                letterFound = true;
+              }
+            }
+          }
+        }
       }
       return result;
     }
