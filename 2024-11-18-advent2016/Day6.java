@@ -24,8 +24,13 @@ public class Day6 {
           //System.out.println(columns[i].length());
           String letter = (columns[i]).substring(index, index + 1);
           //System.out.println(letter);
+          if (count(letter, columns[i]) > greatest) {
+            greatest = count(letter, columns[i]);
+            temp = letter;
+          }
         }
-        //result = result + letter;
+        System.out.println(temp + greatest);
+        result = result + temp;
       }
       return result;
     }
