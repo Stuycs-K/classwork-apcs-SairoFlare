@@ -10,7 +10,13 @@ public class Day4 {
       Scanner file = new Scanner(name);
       int result = 0;
       while (file.hasNextLine()) {
-
+        String room = file.nextLine();
+        //System.out.println(room);
+        String[] splitRoom = room.split("-");
+        //System.out.println(splitRoom[0]);
+        //System.out.println(splitRoom[1]);
+        //System.out.println(splitRoom[2]);
+        //System.out.println(splitRoom[3]);
       }
       return result;
     }
