@@ -4,14 +4,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Day2 {
-  public static ArrayList<Integer> keypadReader(String filename) {
+  public static ArrayList<String> keypadReader(String filename) {
     try {
       File name = new File(filename);
       Scanner file = new Scanner(name);
-      ArrayList<Integer> result = new ArrayList<Integer>(3);
+      ArrayList<String> result = new ArrayList<String>(3);
       while (file.hasNextLine()) {
-        int x = 1;
-        int y = 1;
+        int x = 0;
+        int y = 3;
         String num = file.nextLine();
         //System.out.println(num);
         for (int i = 0; i < num.length(); i++) {
@@ -41,12 +41,12 @@ public class Day2 {
     }
     catch (FileNotFoundException e) {
       System.out.println("file not found");
-      return new ArrayList<Integer>(1);
+      return new ArrayList<String>(1);
     }
   }
 
-  public static int keyPress(int x, int y) {
-    int[][] numpad = new int[][]{{1,2,3}, {4,5,6}, {7,8,9}};
+  public static String keyPress(int x, int y) {
+    String[][] numpad = new String[][]{{"1"}, {"2","3","4"}, {"5","6","7","8","9"}, {"A", "B", "C"}, {"D"}};
     return numpad[y][x];
   }
 }
