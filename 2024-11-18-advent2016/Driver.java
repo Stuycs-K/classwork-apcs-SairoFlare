@@ -5,7 +5,7 @@ public class Driver {
     //System.out.println(hi.getLetter());
     //hi.addCount();
     //System.out.println(hi.getCount());
-    System.out.println(Day4.solver("input.txt"));
+    System.out.println(Day6.solver("input.txt"));
 
   }
 }
