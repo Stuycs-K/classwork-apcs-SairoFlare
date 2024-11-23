@@ -20,20 +20,47 @@ public class Blocks {
         if (direction == 0) {
           //vertical += magnitude(movement);
           //System.out.println(vertical + "vert");
+          for (int i = 0; i < magnitude(movement); i++) {
+            if (twiceCheck(movements, horizontal, vertical) != -1) {
+              return Math.abs(horizontal) + Math.abs(vertical);
+            }
+            movements.add(new int[]{horizontal, vertical});
+            vertical++;
+          }
         }
         else if (direction == 1) {
           //horizontal += magnitude(movement);
           //System.out.println(horizontal + "hori");
+          for (int i = 0; i < magnitude(movement); i++) {
+            if (twiceCheck(movements, horizontal, vertical) != -1) {
+              return Math.abs(horizontal) + Math.abs(vertical);
+            }
+            movements.add(new int[]{horizontal, vertical});
+            horizontal++;
+          }
         }
         else if (direction == 2) {
           //vertical -= magnitude(movement);
           //System.out.println(vertical + "vert");
+          for (int i = 0; i < magnitude(movement); i++) {
+            if (twiceCheck(movements, horizontal, vertical) != -1) {
+              return Math.abs(horizontal) + Math.abs(vertical);
+            }
+            movements.add(new int[]{horizontal, vertical});
+            vertical--;
+          }
         }
         else {
           //horizontal -= magnitude(movement);
           //System.out.println(horizontal + "hori");
+          for (int i = 0; i < magnitude(movement); i++) {
+            if (twiceCheck(movements, horizontal, vertical) != -1) {
+              return Math.abs(horizontal) + Math.abs(vertical);
+            }
+            movements.add(new int[]{horizontal, vertical});
+            horizontal--;
+          }
         }
-        movements.add(new int[]{horizontal, vertical});
       }
       return Math.abs(horizontal) + Math.abs(vertical);
     }
