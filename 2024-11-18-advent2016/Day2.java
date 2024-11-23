@@ -11,26 +11,30 @@ public class Day2 {
       ArrayList<String> result = new ArrayList<String>(3);
       while (file.hasNextLine()) {
         int x = 0;
-        int y = 3;
+        int y = 2;
         String num = file.nextLine();
         //System.out.println(num);
         for (int i = 0; i < num.length(); i++) {
           String temp = num.substring(i, i + 1);
-          if (temp.equals("U") && y >= 1) {
+          if (temp.equals("U") && y != 0 && !(y == 1 && (x == 1 || x == 3)) && !(y == 2 && (x == 0 || x == 5))) {
             y -= 1;
-            //System.out.println(y + "y");
+            System.out.println("U");
+            System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("D") && y <= 1) {
             y += 1;
-            //System.out.println(y + "y");
+            System.out.println("D");
+            System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("R") && x <= 1) {
             x += 1;
-            //System.out.println(x + "x");
+            System.out.println("R");
+            System.out.println(x + "x, " + y + "y");
           }
           else if (temp.equals("L") && x >= 1) {
             x -= 1;
-            //System.out.println(x + "x");
+            System.out.println("L");
+            System.out.println(x + "x, " + y + "y");
           }
         }
         //System.out.println(x + "x");
@@ -46,7 +50,7 @@ public class Day2 {
   }
 
   public static String keyPress(int x, int y) {
-    String[][] numpad = new String[][]{{"1"}, {"2","3","4"}, {"5","6","7","8","9"}, {"A", "B", "C"}, {"D"}};
+    String[][] numpad = new String[][]{{null,null,"1",null,null}, {null,"2","3","4",null}, {"5","6","7","8","9"}, {null,"A", "B", "C",null}, {null,null,"D",null,null}};
     return numpad[y][x];
   }
 }
