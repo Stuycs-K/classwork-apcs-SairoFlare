@@ -19,8 +19,14 @@ public class ColorDemo {
     color(30, 30);
     System.out.print("--");
     color(31, 31);
-    System.out.print("+");
+    System.out.print("++");
     System.out.println("\u001b[0m");
+    System.out.print("\u001b[48;2;255;165;0m");
+    System.out.print("\u001b[38;2;255;165;0m+");
+    color(30, 30);
+    System.out.print("---");
+    color(31, 31);
+    System.out.print("++");
     //color(30, 30);
     //System.out.print("-");
     //color(35, 35);
