@@ -1,9 +1,9 @@
 public class ColorDemo {
   public static void colorFore(int r, int g, int b){
-    System.out.print("\u001b[" + "38;2" + r + ";" + g + ";" + b + "m");
+    System.out.print("\u001b[38;2" + r + ";" + g + ";" + b + "m");
   }
   public static void colorBack(int r, int g, int b){
-    System.out.print("\u001b[" + "48;2" + r + ";" + g + ";" + b + "m");
+    System.out.print("\u001b[48;2" + r + ";" + g + ";" + b + "m");
   }
   public static void color(int foreground, int background){
     System.out.print("\u001b[" + foreground + ";" + background + "m");
