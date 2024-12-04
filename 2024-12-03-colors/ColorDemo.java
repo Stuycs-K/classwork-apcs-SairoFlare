@@ -16,9 +16,10 @@ public class ColorDemo {
     System.out.println("\u001b[38;2;255;0;255mPurple");
     //tries to make T piece from tetris
     color(35, 35);
-    System.out.println("---");
+    System.out.print("---");
+    System.out.println("\u001b[0m");
     color(30, 30);
-    System.out.println("-");
+    System.out.print("-");
     color(35, 35);
     System.out.println("-");
     System.out.print("\u001b[0m");
