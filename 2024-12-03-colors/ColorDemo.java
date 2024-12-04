@@ -11,11 +11,11 @@ public class ColorDemo {
 
   public static void main(String[] args) {
     //colorBack and colorFore don't work, fix later
-    colorBack(10, 200, 255);
-    System.out.println("Blue/Green");
+    //colorBack(10, 200, 255);
+    System.out.println("\u001b[38;2;255;0;255mPurple");
     color(30, 31);
     System.out.println("Hi");
-    System.out.println("\u001b[0m");
+    System.out.print("\u001b[0m");
   }
 
 }
