@@ -48,6 +48,24 @@ public class Driver {
     return result;
   }
 
+  public static void printNums(int[] nums) {
+    for (int i = 0; i < 3; i++) {
+      Text.go(2, (i * 39) + 2);
+      if (nums[i] < 25) {
+        Text.color(RED, BRIGHT);
+        System.out.print(nums[i]);
+      }
+      else if (nums[i] > 75) {
+        Text.color(GREEN, BRIGHT);
+        System.out.print(nums[i]);
+      }
+      else {
+        Text.color(WHITE);
+        System.out.print(nums[i]);
+      }
+    }
+  }
+
   public static void main(String[] args) {
     System.out.print(CLEAR_SCREEN);
     System.out.print(HIDE_CURSOR);
@@ -55,6 +73,7 @@ public class Driver {
     int[] nums = makeArray();
     //System.out.println(Arrays.toString(nums));
     border();
+    printNums(nums);
     System.out.println(RESET);
   }
 }
