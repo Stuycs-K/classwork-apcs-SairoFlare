@@ -48,9 +48,11 @@ public class Driver {
   }
 
   public static void main(String[] args) {
+    System.out.print(CLEAR_SCREEN);
+    System.out.print(HIDE_CURSOR);
     //System.out.println("test");
     int[] nums = makeArray();
-    System.out.println(Arrays.toString(nums));
+    //System.out.println(Arrays.toString(nums));
     border();
     System.out.println(RESET);
   }
