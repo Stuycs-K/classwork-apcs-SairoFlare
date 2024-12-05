@@ -31,8 +31,8 @@ public class Driver {
       //System.out.println("test3");
       Text.go(i, 1);
       System.out.print("+");
-      //Text.go(81, i);
-      //System.out.print("+");
+      Text.go(i, 81);
+      System.out.print("+");
     }
     /*Text.go(30, 1);
     for (int i = 0; i < 80; i++) {
