@@ -29,7 +29,7 @@ public class Driver {
     }
     for (int i = 1; i < 31; i++) {
       //System.out.println("test3");
-      Text.go(1, i);
+      Text.go(i, 1);
       System.out.print("+");
       //Text.go(81, i);
       //System.out.print("+");
