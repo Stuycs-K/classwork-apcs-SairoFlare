@@ -20,8 +20,9 @@ public class Driver {
   public static final String RESET = "\033[0m"+SHOW_CURSOR;
 
   public static void border() {
-    Text.color(WHITE, Text.background(WHITE));
+    System.out.println("test2");
     for (int i = 0; i > 80; i++) {
+      Text.color(WHITE, Text.background(WHITE));
       System.out.print("+");
     }
     for (int i = 1; i > 31; i++) {
@@ -36,6 +37,7 @@ public class Driver {
     }
   }
   public static void main(String[] args) {
+    System.out.println("test");
     border();
     System.out.println(RESET);
   }
