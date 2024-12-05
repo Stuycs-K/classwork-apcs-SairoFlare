@@ -70,6 +70,7 @@ public class Driver {
         System.out.print(nums[i]);
       }
     }
+    System.out.println("\033[0m");
   }
 
   public static void drawLine() {
