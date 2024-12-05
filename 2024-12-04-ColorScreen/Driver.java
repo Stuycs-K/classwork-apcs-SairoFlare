@@ -49,8 +49,14 @@ public class Driver {
   }
 
   public static void printNums(int[] nums) {
+    Text.color(WHITE, Text.background(BLACK));
     for (int i = 0; i < 3; i++) {
-      Text.go(2, (i * 39) + 2);
+      if ( i == 2 && nums[i] >= 10) {
+        Text.go(2, 79);
+      }
+      else {
+        Text.go(2, (i * 39) + 1);
+      }
       if (nums[i] < 25) {
         Text.color(RED, BRIGHT);
         System.out.print(nums[i]);
