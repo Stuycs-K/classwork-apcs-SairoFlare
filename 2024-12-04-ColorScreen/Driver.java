@@ -22,6 +22,7 @@ public class Driver {
 
   public static void border() {
     //System.out.println("test2");
+    Text.go(1, 1);
     for (int i = 0; i < 80; i++) {
       Text.color(WHITE, Text.background(WHITE));
       System.out.print("+");
