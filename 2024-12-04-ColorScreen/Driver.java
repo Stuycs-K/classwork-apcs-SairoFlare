@@ -27,15 +27,15 @@ public class Driver {
       System.out.print("+");
     }
     for (int i = 1; i < 31; i++) {
-      System.out.println("test3");
+      //System.out.println("test3");
       Text.go(1, i);
       System.out.print("+");
-      Text.go(81, i);
-      System.out.print("+");
+      //Text.go(81, i);
+      //System.out.print("+");
     }
     Text.go(30, 1);
     for (int i = 0; i < 80; i++) {
-      System.out.print("+");
+      //System.out.print("+");
     }
   }
 
