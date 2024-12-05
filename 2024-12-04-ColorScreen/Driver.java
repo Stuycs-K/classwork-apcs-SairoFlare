@@ -34,10 +34,10 @@ public class Driver {
       Text.go(i, 81);
       System.out.print("+");
     }
-    /*Text.go(30, 1);
+    Text.go(30, 1);
     for (int i = 0; i < 80; i++) {
       System.out.print("+");
-    }*/
+    }
   }
 
   public static int[] makeArray() {
