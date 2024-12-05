@@ -23,8 +23,8 @@ public class Driver {
   public static void border() {
     //System.out.println("test2");
     Text.go(1, 1);
+    Text.color(WHITE, Text.background(WHITE));
     for (int i = 0; i < 80; i++) {
-      Text.color(WHITE, Text.background(WHITE));
       System.out.print("+");
     }
     for (int i = 1; i < 31; i++) {
@@ -72,6 +72,14 @@ public class Driver {
     }
   }
 
+  public static void drawLine() {
+    Text.go(3,2);
+    Text.color(YELLOW, Text.background(YELLOW));
+    for (int i = 1; i < 79; i++) {
+      System.out.print("+");
+    }
+  }
+
   public static void main(String[] args) {
     System.out.print(CLEAR_SCREEN);
     System.out.print(HIDE_CURSOR);
@@ -80,7 +88,8 @@ public class Driver {
     //System.out.println(Arrays.toString(nums));
     border();
     printNums(nums);
-    Text.go(31,1);
+    drawLine();
+    Text.go(30,1);
     System.out.println(RESET);
   }
 }
