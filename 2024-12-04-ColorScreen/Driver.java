@@ -74,9 +74,9 @@ public class Driver {
 
   public static void drawLine() {
     Text.go(3,2);
-    Text.color(YELLOW, Text.background(YELLOW));
+    Text.color(WHITE, Text.background(WHITE));
     for (int i = 1; i < 79; i++) {
-      System.out.print("+");
+      System.out.print("-");
     }
   }
 
