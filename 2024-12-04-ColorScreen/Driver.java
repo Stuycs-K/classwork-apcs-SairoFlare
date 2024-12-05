@@ -1,3 +1,4 @@
+import java.util.Arrays;
 public class Driver {
   //MODIFIERS
   public static final int BRIGHT = 1;
@@ -26,6 +27,7 @@ public class Driver {
       System.out.print("+");
     }
     for (int i = 1; i < 31; i++) {
+      System.out.println("test3");
       Text.go(1, i);
       System.out.print("+");
       Text.go(81, i);
@@ -36,8 +38,19 @@ public class Driver {
       System.out.print("+");
     }
   }
+
+  public static int[] makeArray() {
+    int[] result = new int[3];
+    for (int i = 0; i < 3; i++) {
+      result[i] = (int)(Math.random() * 100);
+    }
+    return result;
+  }
+
   public static void main(String[] args) {
     //System.out.println("test");
+    int[] nums = makeArray();
+    System.out.println(Arrays.toString(nums));
     border();
     System.out.println(RESET);
   }
