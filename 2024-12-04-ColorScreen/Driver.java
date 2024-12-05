@@ -55,7 +55,7 @@ public class Driver {
         Text.go(2, 79);
       }
       else {
-        Text.go(2, (i * 39) + 1);
+        Text.go(2, (i * 39) + 2);
       }
       if (nums[i] < 25) {
         Text.color(RED, BRIGHT);
@@ -80,6 +80,7 @@ public class Driver {
     //System.out.println(Arrays.toString(nums));
     border();
     printNums(nums);
+    Text.go(31,1);
     System.out.println(RESET);
   }
 }
