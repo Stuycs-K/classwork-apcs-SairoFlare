@@ -20,24 +20,24 @@ public class Driver {
   public static final String RESET = "\033[0m"+SHOW_CURSOR;
 
   public static void border() {
-    System.out.println("test2");
-    for (int i = 0; i > 80; i++) {
+    //System.out.println("test2");
+    for (int i = 0; i < 80; i++) {
       Text.color(WHITE, Text.background(WHITE));
       System.out.print("+");
     }
-    for (int i = 1; i > 31; i++) {
+    for (int i = 1; i < 31; i++) {
       Text.go(1, i);
       System.out.print("+");
       Text.go(81, i);
       System.out.print("+");
     }
     Text.go(30, 1);
-    for (int i = 0; i > 80; i++) {
+    for (int i = 0; i < 80; i++) {
       System.out.print("+");
     }
   }
   public static void main(String[] args) {
-    System.out.println("test");
+    //System.out.println("test");
     border();
     System.out.println(RESET);
   }
