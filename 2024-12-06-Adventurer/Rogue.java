@@ -35,7 +35,8 @@ public class Rogue extends Adventurer {
   */
   //hurt or hinder the target adventurer
   public String attack(Adventurer other) {
-    return "";
+    other.applyDamage(3);
+    return this.getName() + " attacked " + other.getName() + " for 3 HP!";
   }
 
   //heall or buff the target adventurer
@@ -50,6 +51,8 @@ public class Rogue extends Adventurer {
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
-    return "";
+    other.applyDamage(6);
+    this.setSpecial(this.getSpecial() - 2);
+    return this.getName() + " used backstab " + other.getName() + " for 6 HP!";
   }
 }

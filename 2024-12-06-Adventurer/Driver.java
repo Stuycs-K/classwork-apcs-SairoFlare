@@ -14,5 +14,6 @@ public class Driver {
     p2.setSpecial(3);
     System.out.println(p2.getSpecial());
     System.out.println(p2.getSpecialMax());
+    System.out.println(p2.attack(p1));
   }
 }
