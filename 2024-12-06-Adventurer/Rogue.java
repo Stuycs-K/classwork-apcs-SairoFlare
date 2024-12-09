@@ -41,18 +41,38 @@ public class Rogue extends Adventurer {
 
   //heall or buff the target adventurer
   public String support(Adventurer other) {
-    return "";
+    if (other.getSpecial() > 1) {
+      other.setSpecial(other.getSpecial() - 2);
+      return this.getName() + " ensnared " + other.getName() + " in a trap, and they lost 2 " + other.getSpecialName() + "!";
+    }
+    else {
+      int oldSP = other.getSpecial();
+      other.setSpecial(0);
+      return this.getName() + " ensnared " + other.getName() + " in a trap, and they lost" + oldSP + " " + other.getSpecialName() + "!";
+    }
   }
 
   //heall or buff self
   public String support() {
-    return "";
+    int oldSneak = getSpecial();
+    if (getSpecial() < 3){
+      setSpecial(getSpecial() + 3);
+    }
+    else {
+      setSpecial(5);
+    }
+    return getName() + " slinked into the shadows to regain " + (getSpecial() - oldSneak) + " sneak!";
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
     other.applyDamage(6);
-    this.setSpecial(this.getSpecial() - 2);
-    return this.getName() + " used backstab " + other.getName() + " for 6 HP!";
+    if (this.getSpecial() >= 2) {
+      this.setSpecial(this.getSpecial() - 2);
+      return this.getName() + " used backstab " + other.getName() + " for 6 HP!";
+    }
+    else {
+      return "not enough sneak";
+    }
   }
 }
