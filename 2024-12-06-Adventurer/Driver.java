@@ -29,7 +29,9 @@ public class Driver {
     System.out.println(p1.getSpecial());
     System.out.println(p1.specialAttack(p2));
     System.out.println(p1.getSpecial());
-    p1.support();
-    p2.support(p1);
+    System.out.println(p1.support());
+    System.out.println(p2.support(p1));
+    System.out.println(p1.specialAttack(p2));
+    System.out.println(p2.support(p1));
   }
 }
