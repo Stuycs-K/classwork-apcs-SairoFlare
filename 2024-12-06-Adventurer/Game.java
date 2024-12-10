@@ -3,7 +3,7 @@ public class Game {
   public static void main(String[] args) {
     boolean exit = false;
     Adventurer player = new Rogue("Player", 25);
-    Adventurer enemy = new CodeWarrior("Mr. Man", 40, "java");
+    Adventurer enemy = new CodeWarrior("Mr. Man", 30, "java");
     Scanner userInput = new Scanner(System.in);
     //Scanner userInput = new Scanner(System.in);
     while (player.getHP() > 0 && enemy.getHP() > 0 && !exit) {
@@ -41,5 +41,6 @@ public class Game {
         }
       }
     }
+    System.out.println("The game is over! Thanks for playing.");
   }
 }

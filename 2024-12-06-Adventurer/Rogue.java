@@ -72,7 +72,7 @@ public class Rogue extends Adventurer {
       return this.getName() + " backstabbed " + other.getName() + " for 6 HP!";
     }
     else {
-      return "not enough sneak";
+      return "Not enough sneak, instead " + this.attack(other);
     }
   }
 }
