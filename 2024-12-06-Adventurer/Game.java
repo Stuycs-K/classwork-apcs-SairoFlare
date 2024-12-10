@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class Game {
   public static void main(String[] args) {
     boolean exit = false;
-    Adventurer player = new Rogue("Player", 12);
-    Adventurer enemy = new CodeWarrior("Mr. Man", 10, "java");
+    Adventurer player = new Rogue("Player", 25);
+    Adventurer enemy = new CodeWarrior("Mr. Man", 40, "java");
     Scanner userInput = new Scanner(System.in);
     //Scanner userInput = new Scanner(System.in);
     while (player.getHP() > 0 && enemy.getHP() > 0 && !exit) {
@@ -21,6 +21,24 @@ public class Game {
       }
       else if (userChoice.equals("a") || userChoice.equals("attack")) {
         System.out.println(player.attack(enemy));
+      }
+      else if (userChoice.equals("sp") || userChoice.equals("special")) {
+        System.out.println(player.specialAttack(enemy));
+      }
+      else if (userChoice.equals("su") || userChoice.equals("support")) {
+        System.out.println(player.support());
+      }
+      if (enemy.getHP() > 0 && !exit) {
+        int choice = (int)(Math.random() * 3);
+        if (choice == 0) {
+          System.out.println(enemy.attack(player));
+        }
+        if (choice == 1) {
+          System.out.println(enemy.specialAttack(player));
+        }
+        if (choice == 2) {
+          System.out.println(enemy.support());
+        }
       }
     }
   }
