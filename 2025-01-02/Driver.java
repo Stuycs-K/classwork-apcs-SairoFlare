@@ -12,4 +12,7 @@ public class Driver {
     System.out.println(Fib.fib(8));
     System.out.println(Fib.fib(9));*/
   }
+
+  // 46 is the highest number to calculate under 10 seconds
+  //
 }
